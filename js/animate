@@ -1,0 +1,41 @@
+$(function ()
+{
+  // All list items are selected and,
+  // when a user clicks on one of
+  // them, an anonymous function
+  // runsAll list items are selected and,
+  // when a user clicks on one of
+  // them, an anonymous function
+  // runs. $(this) creates
+  // a new jQuery object holding
+  // the element the user clicked on.
+  // The .animate() method is then
+  // called on that jQuery object.
+  $("li").on("click", function()
+  {
+    //Inside the .animate()
+    // method, the opacity and
+    // paddingleft are changed
+    $(this).animate(
+    {
+      opacity: 0.0,
+      paddingLeft: "+= 80"
+
+    //The .animate() method has
+    // two more parameters. The first
+    // is the speed of the animation
+    // in milliseconds. The second is another
+    // anonymous function indicating
+    // what should happen when the
+    // animation finishes.
+    }, 500,
+    function()
+    {
+      //the callback function
+      // removes that list item from
+      // the page using the . remove()
+      // method. 
+      $(this).remove();
+    });
+  });
+});
